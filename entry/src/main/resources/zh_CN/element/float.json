@@ -1,0 +1,28 @@
+{
+  "float": [
+    {
+      "name": "mainPage_baseTab_size",
+      "value": "24vp"
+    },
+    {
+      "name": "mainPage_baseTab_top",
+      "value": "4vp"
+    },
+    {
+      "name": "mainPage_barHeight",
+      "value": "52vp"
+    },
+    {
+      "name": "tab_text_font_size",
+      "value": "10fp"
+    },
+    {
+      "name": "content_font_size",
+      "value": "30fp"
+    },
+    {
+      "name": "padding_bottom_tab",
+      "value": "12vp"
+    }
+  ]
+}
