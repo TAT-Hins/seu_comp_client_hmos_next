@@ -27,19 +27,8 @@ struct CanteenItem {
   }
 }
 
-@Entry
 @Component
-struct Index {
-  @State tabArray: Array<HomeTabModel> = initTabTuData();
-  @State tabCount: number = this.tabArray.length;
-  @State TAB_INDEX_MIDDLE: number = (this.tabCount - 1) / 2;
-  @State TAB_INDEX_MENU: number = 1;
-  @State currentIndex: number = 0;
-  @State iconOffset: number = 0;
-  @State initNumber: number = 0;
-
-  private controller: TabsController = new TabsController();
-
+struct CanteenTab {
   // Menu
   @State CanteenArray: Array<CanteenModel> = initCanteenSideTabData();
   @State curSelectedCanteen: number = 0;
@@ -55,7 +44,56 @@ struct Index {
         this.canteenScroller.scrollToIndex(index);
       }
     }
+  }
+
+  build() {
+    Row() {
+      List({ scroller: this.canteenScroller }) {
+        ForEach(this.CanteenArray, (item: CanteenModel, index?: number) => {
+          ListItem() {
+            CanteenItem({
+              canteenName: item.canteenName,
+              isSelected: this.curSelectedCanteen === index,
+              onClickAction: () => {
+                if (index !== undefined) {
+                  this.classifyChangeAction(index, true);
+                }
+              }
+            })
+          }
+        }, (item: CanteenModel, index: number) => JSON.stringify(item) + index)
+      }
+      .height(Constants.MENU_CONTENT_HEIGHT)
+      .width(Constants.MENU_SIDE_TAB_WIDTH)
+      .backgroundColor($r('app.color.side_background_color'))
+      .scrollBar(BarState.Off)
+      .margin({ top: $r('app.float.margin_side_tab_top') })
+
+      Column() {
+        ForEach(this.CanteenArray, (item: CanteenModel, index: number) => {
+          Text(this.curSelectedCanteen === index ? item.canteenName : '')
+            .fontSize($r('app.float.content_font_size'))
+        },(item: CanteenModel, index: number) => JSON.stringify(item) + index)
+      }
+      .width(Constants.MENU_SIDE_CONTEND_WIDTH)
+    }
+    .backgroundColor($r('app.color.side_content_color'))
+  }
 }
+
+
+@Entry
+@Component
+struct Index {
+  @State tabArray: Array<HomeTabModel> = initTabTuData();
+  @State tabCount: number = this.tabArray.length;
+  @State TAB_INDEX_MIDDLE: number = (this.tabCount - 1) / 2;
+  @State TAB_INDEX_MENU: number = 1;
+  @State currentIndex: number = 0;
+  @State iconOffset: number = 0;
+  @State initNumber: number = 0;
+
+  private controller: TabsController = new TabsController();
 
   @Builder
   Tab(selectImage: Resource, defaultImage: Resource, title: string | Resource, middleMode: boolean, index: number) {
@@ -116,37 +154,7 @@ struct Index {
               if (index === this.TAB_INDEX_MIDDLE) {
                 // 中间页内容
               } else if (index === this.TAB_INDEX_MENU) {
-                Row() {
-                  List({ scroller: this.canteenScroller }) {
-                    ForEach(this.CanteenArray, (item: CanteenModel, index?: number) => {
-                      ListItem() {
-                        CanteenItem({
-                          canteenName: item.canteenName,
-                          isSelected: this.curSelectedCanteen === index,
-                          onClickAction: () => {
-                            if (index !== undefined) {
-                              this.classifyChangeAction(index, true);
-                            }
-                          }
-                        })
-                      }
-                    }, (item: CanteenModel, index: number) => JSON.stringify(item) + index)
-                  }
-                  .height(Constants.MENU_CONTENT_HEIGHT)
-                  .width(Constants.MENU_SIDE_TAB_WIDTH)
-                  .backgroundColor($r('app.color.side_background_color'))
-                  .scrollBar(BarState.Off)
-                  .margin({ top: $r('app.float.margin_side_tab_top') })
-
-                  Column() {
-                    ForEach(this.CanteenArray, (item: CanteenModel, index: number) => {
-                      Text(this.curSelectedCanteen === index ? item.canteenName : '')
-                        .fontSize($r('app.float.content_font_size'))
-                    },(item: CanteenModel, index: number) => JSON.stringify(item) + index)
-                  }
-                  .width(Constants.MENU_SIDE_CONTEND_WIDTH)
-                }
-                .backgroundColor($r('app.color.side_content_color'))
+                CanteenTab()
               } else {
                 // 填入当前tab标题
                 Row() {
