@@ -49,11 +49,11 @@ struct BottomTabOnlyPage {
       barPosition: BarPosition.End,
       controller: this.tabsController
     }) {
-      this.tabContentBuilder($r('app.string.tab_homepage'),
+      this.tabContentBuilder($r("app.string.hometab_homepage"),
         Constants.TAB_INDEX_ZERO, $r('app.media.activeHome'), $r('app.media.home'))
-      this.tabContentBuilder($r('app.string.tab_message'),
+      this.tabContentBuilder($r("app.string.hometab_message"),
         Constants.TAB_INDEX_ONE, $r('app.media.activeMessage'), $r('app.media.message'))
-      this.tabContentBuilder($r("app.string.tab_mine"),
+      this.tabContentBuilder($r("app.string.hometab_mine"),
         Constants.TAB_INDEX_TWO, $r('app.media.activeAccount'), $r('app.media.account'))
     }
     .width(Constants.FULL_WIDTH)

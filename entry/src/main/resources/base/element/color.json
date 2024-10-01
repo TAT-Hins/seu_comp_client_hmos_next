@@ -11,6 +11,22 @@
     {
       "name": "tab_color",
       "value": "#F3F4F5"
+    },
+    {
+      "name": "side_selected_color",
+      "value": "#182431"
+    },
+    {
+      "name": "side_text_color",
+      "value": "#99182431"
+    },
+    {
+      "name": "side_content_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "side_background_color",
+      "value": "#F1F3F5"
     }
   ]
 }

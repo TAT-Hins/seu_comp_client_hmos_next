@@ -58,4 +58,19 @@ export class Constants {
    * Icon offset.
    */
   static readonly ICON_OFFSET: number = -3;
+
+  /**
+   * List content height.
+   */
+  static readonly MENU_CONTENT_HEIGHT: string = '110%';
+
+  /**
+   * Side tab width.
+   */
+  static readonly MENU_SIDE_TAB_WIDTH: string = '27.8%';
+
+  /**
+   * Side contend width.
+   */
+  static readonly MENU_SIDE_CONTEND_WIDTH: string = '72.2%';
 }

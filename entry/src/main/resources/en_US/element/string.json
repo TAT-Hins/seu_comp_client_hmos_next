@@ -13,20 +13,40 @@
       "value": "label"
     },
     {
-      "name": "tab_homepage",
+      "name": "hometab_homepage",
       "value": "Home"
     },
     {
-      "name": "tab_list",
-      "value": "List"
+      "name": "hometab_menu",
+      "value": "Menu"
     },
     {
-      "name": "tab_message",
+      "name": "hometab_message",
       "value": "Message"
     },
     {
-      "name": "tab_mine",
+      "name": "hometab_mine",
       "value": "My"
+    },
+    {
+      "name": "canteen_tao",
+      "value": "Tao Yuan"
+    },
+    {
+      "name": "canteen_mei",
+      "value": "Mei Yuan"
+    },
+    {
+      "name": "canteen_ju",
+      "value": "Ju Yuan"
+    },
+    {
+      "name": "hei_ti_medium",
+      "value": "HarmonyHeiTi-Medium"
+    },
+    {
+      "name": "hei_ti",
+      "value": "HarmonyHeiTi"
     }
   ]
 }

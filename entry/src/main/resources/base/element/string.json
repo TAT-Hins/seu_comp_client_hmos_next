@@ -13,20 +13,40 @@
       "value": "label"
     },
     {
-      "name": "tab_homepage",
+      "name": "hometab_homepage",
       "value": "主页"
     },
     {
-      "name": "tab_list",
-      "value": "列表"
+      "name": "hometab_menu",
+      "value": "菜单"
     },
     {
-      "name": "tab_message",
+      "name": "hometab_message",
       "value": "消息"
     },
     {
-      "name": "tab_mine",
+      "name": "hometab_mine",
       "value": "我的"
+    },
+    {
+      "name": "canteen_tao",
+      "value": "桃园"
+    },
+    {
+      "name": "canteen_mei",
+      "value": "梅园"
+    },
+    {
+      "name": "canteen_ju",
+      "value": "橘园"
+    },
+    {
+      "name": "hei_ti_medium",
+      "value": "HarmonyHeiTi-Medium"
+    },
+    {
+      "name": "hei_ti",
+      "value": "HarmonyHeiTi"
     }
   ]
 }

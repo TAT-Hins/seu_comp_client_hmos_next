@@ -35,6 +35,10 @@
     {
       "name": "rudder_barHeight",
       "value": "90vp"
+    },
+    {
+      "name": "margin_side_tab_top",
+      "value": "74vp"
     }
   ]
 }
